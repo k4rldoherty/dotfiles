@@ -8,35 +8,26 @@
   "passthrough": false,
   "fixed-center": true,
   "modules-left": ["hyprland/workspaces", "hyprland/window"],
-  "modules-center": ["mpris"],
+  "modules-center": [
+    "clock#simpleclock",
+  ],
   "modules-right": [
     "cpu",
     "memory",
     "pulseaudio",
     "clock",
-    "clock#simpleclock",
     "tray",
-    "custom/notification",
     "custom/power",
+    "battery",
   ],
-  "custom/spotify": {
-    "format": "  {}",
-    "return-type": "json",
-    "on-click": "playerctl -p spotify play-pause",
-    "on-click-right": "spotifatius toggle-liked",
-    "on-click-middle": "playerctl -p spotify next",
-    "exec": "spotifatius monitor",
-  },
-  "mpris": {
-    "player": "spotify",
-    "dynamic-order": ["artist", "title"],
-    "format": "{player_icon} {dynamic}",
-    "format-paused": "{status_icon} <i>{dynamic}</i>",
-    "status-icons": {
-      "paused": "",
-    },
-    "player-icons": {
-      "default": "",
+  "battery": {
+    "format": "{capacity}% {icon}",
+    "format-alt": "{capacity}% {icon}",
+    "icon": {
+        "charging": "⚡",
+        "discharging": "🔋",
+        "full": "🔋",
+        "empty": "🔋"
     },
   },
   "hyprland/workspaces": {
@@ -98,18 +89,5 @@
     "tooltip": false,
     "on-click": "wlogout -p layer-shell &",
     "format": "⏻",
-  },
-  "custom/notification": {
-    "escape": true,
-    "exec": "swaync-client -swb",
-    "exec-if": "which swaync-client",
-    "format": "{icon}",
-    "format-icons": {
-      "none": "󰅺",
-      "notification": "󰡟",
-    },
-    "on-click": "sleep 0.1 && swaync-client -t -sw",
-    "return-type": "json",
-    "tooltip": false,
   },
 }
