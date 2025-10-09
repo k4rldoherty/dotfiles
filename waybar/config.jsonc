@@ -17,18 +17,18 @@
     "pulseaudio",
     "clock",
     "tray",
-    "custom/power",
     "battery",
+    "custom/power",
   ],
   "battery": {
     "format": "{capacity}% {icon}",
     "format-alt": "{capacity}% {icon}",
     "icon": {
-        "charging": "⚡",
-        "discharging": "🔋",
-        "full": "🔋",
-        "empty": "🔋"
-    },
+      "charging": "🔋",
+      "discharging": "🔋",
+      "full": "🔋",
+      "empty": "⚠️"
+    }
   },
   "hyprland/workspaces": {
     "on-click": "activate",

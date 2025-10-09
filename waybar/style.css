@@ -48,6 +48,7 @@ window#waybar {
 #cpu,
 #tray,
 #memory,
+#battery,
 #window,
 #mpris {
   padding: 0.3rem 0.6rem;
@@ -107,6 +108,10 @@ window#waybar.empty #window {
 }
 
 #custom-power {
+  color: #f38ba8;
+}
+
+#battery {
   color: #f38ba8;
 }
 
